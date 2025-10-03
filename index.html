@@ -8,6 +8,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
     /* Global styles */
     * {
@@ -20,9 +23,8 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background-color: #fafafa;
-      color: #333;
+      background-color: #fff;
+      color: #111; /* black tone for text */
     }
 
     /* Navigation */
@@ -30,7 +32,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: white;
+      background: #fff;
       padding: 15px 0;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       text-align: center;
@@ -39,12 +41,12 @@
     nav a {
       margin: 0 20px;
       text-decoration: none;
-      color: #333;
+      color: #111;
       font-weight: 600;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #4CAF50;
+      color: #666;
     }
 
     /* Hero Section */
@@ -54,18 +56,37 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(to right, #4CAF50, #2E7D32);
-      color: white;
+      background: #fff;
+      color: #111;
       text-align: center;
       padding: 20px;
     }
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 15px;
     }
     header p {
-      font-size: 1.3rem;
-      max-width: 600px;
+      font-size: 1.1rem;
+      max-width: 700px;
+    }
+    .subtle {
+      margin-top: 15px;
+      color: #777; /* less highlighted gray text */
+      font-size: 0.95rem;
+    }
+
+    /* Social icons */
+    .social-icons {
+      margin-top: 20px;
+    }
+    .social-icons a {
+      margin: 0 15px;
+      font-size: 1.8rem;
+      color: #111;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #666;
     }
 
     /* Sections */
@@ -78,13 +99,13 @@
       text-align: center;
       margin-bottom: 30px;
       font-size: 2rem;
-      color: #2E7D32;
+      color: #111;
     }
 
     /* Footer */
     footer {
-      background: #333;
-      color: white;
+      background: #111;
+      color: #fff;
       text-align: center;
       padding: 20px;
       margin-top: 40px;
@@ -96,25 +117,36 @@
   <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
-    <a href="#research">Research</a>
+    <a href="#projects">Research</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <!-- Hero Section -->
   <header>
     <h1>Hello, I’m Aysenur</h1>
-    <p>Master's Student in Human-Computer Interaction | Human-centered AI Research Intern at AIT Austrian Institute of Technology.</p>
-    <p>This site is under construction...</p>
+    <p>Master's Student in Human-Computer Interaction  Research Intern at AIT Austrian Institute of Technology</p>
+    
+    <p class="subtle">This site is under construction...</p>
+
+    <!-- Social Links -->
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/aysenurgurel" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:aysenur.guerel@stud.plus.ac.at" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
   </header>
 
   <!-- About Section -->
   <section id="about">
-    <h2>About</h2>
+    <h2>About Me</h2>
   </section>
 
   <!-- Projects Section -->
   <section id="research">
-    <h2>Research</h2>
+    <h2>Projects</h2>
   </section>
 
   <!-- Contact Section -->
