@@ -61,17 +61,30 @@
       text-align: center;
       padding: 20px;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
+
+    /* Name styling */
+    .name-line {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
     }
+    .name-line h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .name-line p {
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin: 0;
+    }
+
     header p {
       font-size: 1.1rem;
       max-width: 700px;
     }
     .subtle {
       margin-top: 15px;
-      color: #777; /* less highlighted gray text */
+      color: #777;
       font-size: 0.95rem;
     }
 
@@ -123,11 +136,13 @@
 
   <!-- Hero Section -->
   <header>
-    <h1>Aysenur</h1>  <p>Gurel</p>
+    <div class="name-line">
+      <h1>Aysenur</h1>
+      <p>Gurel</p>
+    </div>
     <p>Master's in Human-Computer Interaction</p>
     <p>Research Intern at AIT Austrian Institute of Technology</p>
 
-    
     <p class="subtle">Under construction...</p>
 
     <!-- Social Links -->
@@ -146,7 +161,7 @@
     <h2>About</h2>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Research Section -->
   <section id="research">
     <h2>Research</h2>
   </section>
