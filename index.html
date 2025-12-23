@@ -13,18 +13,13 @@
 
   <style>
     /* Global styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #fff;
-      color: #111; /* black tone for text */
+      color: #111;
+      line-height: 1.6;
     }
 
     /* Navigation */
@@ -45,9 +40,7 @@
       font-weight: 600;
       transition: color 0.3s;
     }
-    nav a:hover {
-      color: #666;
-    }
+    nav a:hover { color: #666; }
 
     /* Hero Section */
     header {
@@ -60,59 +53,148 @@
       color: #111;
       text-align: center;
       padding: 20px;
-      /* Helps avoid the fixed nav overlapping content on small screens */
-      padding-top: 80px;
+      padding-top: 80px; /* fixed nav spacing */
     }
 
-    /* Name styling */
     .name-line {
       display: flex;
       align-items: baseline;
       gap: 8px;
     }
-    .name-line h1 {
+    .name-line h1, .name-line p {
       font-size: 2.5rem;
       margin: 0;
     }
-    .name-line p {
-      font-size: 2.5rem;
-      font-weight: 400;
-      margin: 0;
-    }
+    .name-line p { font-weight: 400; }
 
     header p {
       font-size: 1.1rem;
       max-width: 700px;
     }
     .subtle {
-      margin-top: 15px;
+      margin-top: 12px;
       color: #777;
       font-size: 0.95rem;
     }
 
     /* Social icons */
-    .social-icons {
-      margin-top: 20px;
-    }
+    .social-icons { margin-top: 18px; }
     .social-icons a {
       margin: 0 15px;
       font-size: 1.8rem;
       color: #111;
       transition: color 0.3s;
     }
-    .social-icons a:hover {
-      color: #666;
-    }
+    .social-icons a:hover { color: #666; }
 
     /* Sections */
     section {
-      padding: 60px 20px;
-      max-width: 900px;
+      padding: 70px 20px;
+      max-width: 1100px;
       margin: auto;
-      /* Makes anchor scroll land nicely under the fixed nav */
       scroll-margin-top: 90px;
     }
-    section h2 {
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-left {
+      text-align: left;
+    }
+
+    .profile-photo {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .about-name {
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      color: #222;
+      letter-spacing: 0.08em;
+    }
+    
+    .first-name {
+  font-weight: 600; /* bold */
+    }
+    
+    .last-name {
+  font-weight: 400; /* regular */
+  margin-left: 6px;
+    }
+
+    .about-title {
+      font-size: 1.2rem;
+      color: #333;
+      max-width: 260px;
+    }
+
+    .about-right h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    .about-text {
+      font-size: 1.15rem;
+      color: #222;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .about-text p {
+      margin-bottom: 26px;
+    }
+
+    /* Research publications – CHI-style */
+    .pub-item {
+      margin-top: 30px;
+      max-width: 900px;
+    }
+    
+    .pub-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .pub-title a {
+      color: #2f5fa7; /* academic blue */
+      text-decoration: underline;
+    }
+    
+    .pub-title a:hover {
+      color: #1f3f73;
+    }
+    
+    .pub-authors {
+      font-size: 1.1rem;
+      color: #222;
+      margin-bottom: 6px;
+    }
+    
+    .pub-venue {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    /* Research section heading */
+    #research h2 {
       text-align: right;
       margin-bottom: 20px;
       font-size: 1.4rem;
@@ -127,16 +209,31 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .about-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .about-title { max-width: 520px; }
+      .about-right h2 { text-align: center; }
+    }
   </style>
 </head>
 
 <body>
-
   <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#research">Research</a>
-    <!-- Solution 1: cache-buster query param -->
+    <!-- cache-buster query param -->
     <a href="Aysenur_Gurel_CV.pdf?v=2" target="_blank" rel="noopener">CV</a>
   </nav>
 
@@ -146,13 +243,9 @@
       <h1>Aysenur</h1>
       <p>Gurel</p>
     </div>
-
     <p>Master's in Human-Computer Interaction</p>
     <p>Research Intern at AIT Austrian Institute of Technology</p>
 
-    <p class="subtle">Under construction...</p>
-
-    <!-- Social Links -->
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/aysenurgurel" target="_blank" rel="noopener" title="LinkedIn">
         <i class="fab fa-linkedin"></i>
@@ -163,20 +256,82 @@
     </div>
   </header>
 
-  <!-- About Section -->
+  <!-- About Section  -->
   <section id="about">
-    <h2>About</h2>
+    <div class="about-grid">
+      <!-- Left column -->
+      <div class="about-left">
+        
+        <img class="profile-photo" src="profile.jpg" alt="Portrait of Aysenur Gurel" />
+
+        <div class="about-name">
+          <span class="first-name">Aysenur</span>
+          <span class="last-name">Gurel</span>
+        </div>
+        <div class="about-title">
+          Master's in Human-Computer Interaction
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div class="about-right">
+        <h2>About Me</h2>
+        <div class="about-text">
+          <p>
+           I’m Aysenur Gurel, a Master’s student in Human-Computer Interaction (expected March 2026). My interests lie at the 
+            intersection of human-computer interaction (HCI) and human-centered AI (HAI), with research experience in designing 
+            and evaluating LLM-powered conversational systems.
+            
+            My research focuses on applying HCI methods to the design of human–AI collaboration, particularly in contexts where 
+            people engage in creative and critical knowledge work. 
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Research Section -->
   <section id="research">
-    <h2>Research</h2>
-  </section>
+  <h2>Research</h2>
 
-  <!-- Footer -->
+  <!-- Publication 1: CHI 2026 (In Progress) -->
+  <div class="pub-item">
+    <p class="pub-title">
+      Branching Foresight – A Novel Interaction Concept for AI-Generated Scenario Exploration
+    </p>
+    <p class="pub-authors">
+      <strong>Aysenur Gürel</strong>, Co-author.
+    </p>
+    <p class="pub-venue">
+      In <em>Proceedings of the ACM CHI Conference on Human Factors in Computing Systems (CHI ’26)</em>.
+      Revise &amp; Resubmit.
+    </p>
+  </div>
+
+  <!-- Publication 2: Mensch und Computer 2025 (Published) -->
+  <div class="pub-item">
+    <p class="pub-title">
+      <a
+        href="https://dl.gi.de/server/api/core/bitstreams/d6a8375f-7da3-461d-afdc-988d02fa81e3/content"
+        target="_blank"
+        rel="noopener"
+      >
+        Illuminating the Invisible: Lumocus for Enhancing Women’s Work-From-Home Experiences
+      </a>
+    </p>
+    <p class="pub-authors">
+      <strong>Gürel, A.</strong> 2025.
+    </p>
+    <p class="pub-venue">
+      In <em>Mensch und Computer 2025</em>, Workshopband.
+      MCI Student Research Competition.
+      ACM In-Cooperation.
+    </p>
+  </div>
+</section>
+
   <footer>
     <p>© 2025 Aysenur. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
