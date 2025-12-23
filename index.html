@@ -5,14 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ayşenur Gürel</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    /* Global styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -42,69 +38,32 @@
     }
     nav a:hover { color: #666; }
 
-    /* Hero Section */
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #fff;
-      color: #111;
-      text-align: center;
-      padding: 20px;
-      padding-top: 80px; /* fixed nav spacing */
-    }
-
-    .name-line {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-    }
-    .name-line h1, .name-line p {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    .name-line p { font-weight: 400; }
-
-    header p {
-      font-size: 1.1rem;
-      max-width: 700px;
-    }
-    .subtle {
-      margin-top: 12px;
-      color: #777;
-      font-size: 0.95rem;
-    }
-
-    /* Social icons */
-    .social-icons { margin-top: 18px; }
-    .social-icons a {
-      margin: 0 15px;
-      font-size: 1.8rem;
-      color: #111;
-      transition: color 0.3s;
-    }
-    .social-icons a:hover { color: #666; }
-
     /* Sections */
-    section {
+    section, header {
       padding: 70px 20px;
       max-width: 1100px;
       margin: auto;
       scroll-margin-top: 90px;
     }
 
+    /* HERO */
+    header#about {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 110px;  /* space for fixed nav */
+      padding-bottom: 140px; /* extra space */
+    }
+
     .about-grid {
+      width: 100%;
       display: grid;
       grid-template-columns: 320px 1fr;
       gap: 60px;
       align-items: start;
     }
 
-    .about-left {
-      text-align: left;
-    }
+    .about-left { text-align: left; }
 
     .profile-photo {
       width: 210px;
@@ -115,30 +74,27 @@
       margin-bottom: 20px;
     }
 
-    .about-name {
-      font-size: 1.6rem;
-      letter-spacing: 1px;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      color: #222;
-      letter-spacing: 0.08em;
-    }
-    
-    .first-name {
-  font-weight: 600; /* bold */
-    }
-    
-    .last-name {
-  font-weight: 400; /* regular */
-  margin-left: 6px;
-    }
-
+    /* REMOVE name block from About-left */
     .about-title {
       font-size: 1.2rem;
       color: #333;
       max-width: 260px;
+      margin-bottom: 16px;
     }
+
+    /* Social icons */
+    .social-icons {
+      margin-top: 8px;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+    .social-icons a {
+      font-size: 1.6rem;
+      color: #111;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover { color: #666; }
 
     .about-right h2 {
       text-align: center;
@@ -156,52 +112,46 @@
       max-width: 720px;
       margin: 0 auto;
     }
+    .about-text p { margin-bottom: 26px; }
 
-    .about-text p {
-      margin-bottom: 26px;
-    }
-
-    /* Research publications – CHI-style */
+    /* Research publications */
     .pub-item {
       margin-top: 30px;
       max-width: 900px;
     }
-    
     .pub-title {
       font-size: 1.35rem;
       font-weight: 600;
       margin-bottom: 10px;
     }
-    
     .pub-title a {
-      color: #2f5fa7; /* academic blue */
+      color: #2f5fa7;
       text-decoration: underline;
     }
-    
-    .pub-title a:hover {
-      color: #1f3f73;
-    }
-    
+    .pub-title a:hover { color: #1f3f73; }
     .pub-authors {
       font-size: 1.1rem;
       color: #222;
       margin-bottom: 6px;
     }
-    
     .pub-venue {
       font-size: 1.1rem;
       color: #333;
     }
 
-    /* Research section heading */
+    /* More space before Research section */
+    #research {
+      padding-top: 170px; /* extra breathing room after About */
+    }
+
+    /* Research section */
     #research h2 {
-      text-align: right;
+      text-align: left;
       margin-bottom: 20px;
       font-size: 1.4rem;
       color: #111;
     }
 
-    /* Footer */
     footer {
       background: #111;
       color: #fff;
@@ -210,8 +160,8 @@
       margin-top: 40px;
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
+      header#about { padding-bottom: 90px; }
       .about-grid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -224,111 +174,89 @@
       }
       .about-title { max-width: 520px; }
       .about-right h2 { text-align: center; }
+      .social-icons { justify-content: center; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#research">Research</a>
-    <!-- cache-buster query param -->
     <a href="Aysenur_Gurel_CV.pdf?v=2" target="_blank" rel="noopener">CV</a>
   </nav>
 
-  <!-- Hero Section -->
-  <header>
-    <div class="name-line">
-      <h1>Aysenur</h1>
-      <p>Gurel</p>
-    </div>
-    <p>Master's in Human-Computer Interaction</p>
-    <p>Research Intern at AIT Austrian Institute of Technology</p>
-
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/aysenurgurel" target="_blank" rel="noopener" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="mailto:aysenur.guerel@stud.plus.ac.at" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-  </header>
-
-  <!-- About Section  -->
-  <section id="about">
+  <!-- (1) HERO replaced with ABOUT content -->
+  <header id="about">
     <div class="about-grid">
-      <!-- Left column -->
       <div class="about-left">
-        
-        <img class="profile-photo" src="profile.jpg" alt="Portrait of Aysenur Gurel" />
+        <!-- (5) photo path must be correct -->
+        <img class="profile-photo" src="./profile.JPG" alt="Portrait of Aysenur Gurel" />
 
-        <div class="about-name">
-          <span class="first-name">Aysenur</span>
-          <span class="last-name">Gurel</span>
-        </div>
-        <div class="about-title">
-          Master's in Human-Computer Interaction
+        <div class="about-title">Master’s in Human-Computer Interaction</div>
+
+        <!-- (2) icons moved here under Master's line -->
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/aysenurgurel" target="_blank" rel="noopener" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:aysenur.guerel@stud.plus.ac.at" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
       </div>
 
-      <!-- Right column -->
       <div class="about-right">
         <h2>About Me</h2>
         <div class="about-text">
           <p>
-           I’m Aysenur Gurel, a Master’s student in Human-Computer Interaction (expected March 2026). My interests lie at the 
-            intersection of human-computer interaction (HCI) and human-centered AI (HAI), with research experience in designing 
-            and evaluating LLM-powered conversational systems.
-            
-            My research focuses on applying HCI methods to the design of human–AI collaboration, particularly in contexts where 
-            people engage in creative and critical knowledge work. 
+            I’m Aysenur Gurel, a Master’s student in Human-Computer Interaction (expected March 2026).
+            My interests lie at the intersection of human-computer interaction (HCI) and human-centered AI (HAI),
+            with research experience in designing and evaluating LLM-powered conversational systems.
+            My research focuses on applying HCI methods to the design of human–AI collaboration,
+            particularly in contexts where people engage in creative and critical knowledge work.
           </p>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Research Section -->
   <section id="research">
-  <h2>Research</h2>
+    <h2>Research</h2>
 
-  <!-- Publication 1: CHI 2026 (In Progress) -->
-  <div class="pub-item">
-    <p class="pub-title">
-      Branching Foresight – A Novel Interaction Concept for AI-Generated Scenario Exploration
-    </p>
-    <p class="pub-authors">
-      <strong>Aysenur Gürel</strong>, Co-author.
-    </p>
-    <p class="pub-venue">
-      In <em>Proceedings of the ACM CHI Conference on Human Factors in Computing Systems (CHI ’26)</em>.
-      Revise &amp; Resubmit.
-    </p>
-  </div>
+    <div class="pub-item">
+      <p class="pub-title">
+        Branching Foresight – A Novel Interaction Concept for AI-Generated Scenario Exploration
+      </p>
+      <p class="pub-authors">
+        <strong>Aysenur Gürel</strong>, Co-author.
+      </p>
+      <p class="pub-venue">
+        In <em>Proceedings of the ACM CHI Conference on Human Factors in Computing Systems (CHI ’26)</em>.
+        Revise &amp; Resubmit.
+      </p>
+    </div>
 
-  <!-- Publication 2: Mensch und Computer 2025 (Published) -->
-  <div class="pub-item">
-    <p class="pub-title">
-      <a
-        href="https://dl.gi.de/server/api/core/bitstreams/d6a8375f-7da3-461d-afdc-988d02fa81e3/content"
-        target="_blank"
-        rel="noopener"
-      >
-        Illuminating the Invisible: Lumocus for Enhancing Women’s Work-From-Home Experiences
-      </a>
-    </p>
-    <p class="pub-authors">
-      <strong>Gürel, A.</strong> 2025.
-    </p>
-    <p class="pub-venue">
-      In <em>Mensch und Computer 2025</em>, Workshopband.
-      MCI Student Research Competition.
-      ACM In-Cooperation.
-    </p>
-  </div>
-</section>
+    <div class="pub-item">
+      <p class="pub-title">
+        <a
+          href="https://dl.gi.de/server/api/core/bitstreams/d6a8375f-7da3-461d-afdc-988d02fa81e3/content"
+          target="_blank"
+          rel="noopener"
+        >
+          Illuminating the Invisible: Lumocus for Enhancing Women’s Work-From-Home Experiences
+        </a>
+      </p>
+      <p class="pub-authors">
+        <strong>Gürel, A.</strong> 2025.
+      </p>
+      <p class="pub-venue">
+        In <em>Mensch und Computer 2025</em>, Workshopband.
+        MCI Student Research Competition.
+        ACM In-Cooperation.
+      </p>
+    </div>
+  </section>
 
   <footer>
     <p>© 2025 Aysenur. All rights reserved.</p>
