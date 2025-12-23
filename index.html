@@ -24,7 +24,7 @@
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #fff;
-      color: #111;
+      color: #111; /* black tone for text */
     }
 
     /* Navigation */
@@ -84,32 +84,15 @@
       font-size: 1.1rem;
       max-width: 700px;
     }
-
     .subtle {
-      margin-top: 12px;
+      margin-top: 15px;
       color: #777;
       font-size: 0.95rem;
     }
 
-    /* CV Button */
-    .cv-button {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 12px 24px;
-      border: 1px solid #111;
-      color: #111;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    .cv-button:hover {
-      background: #111;
-      color: #fff;
-    }
-
     /* Social icons */
     .social-icons {
-      margin-top: 18px;
+      margin-top: 20px;
     }
     .social-icons a {
       margin: 0 15px;
@@ -148,12 +131,13 @@
 </head>
 
 <body>
+
   <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#research">Research</a>
-    <a href="Aysenur_Gurel_CV.pdf" target="_blank" rel="noopener">CV</a>
-    <a href="#contact">Contact</a>
+    <!-- Solution 1: cache-buster query param -->
+    <a href="Aysenur_Gurel_CV.pdf?v=2" target="_blank" rel="noopener">CV</a>
   </nav>
 
   <!-- Hero Section -->
@@ -165,11 +149,6 @@
 
     <p>Master's in Human-Computer Interaction</p>
     <p>Research Intern at AIT Austrian Institute of Technology</p>
-
-    <!-- CV button -->
-    <a href="Aysenur_Gurel_CV.pdf" class="cv-button" target="_blank" rel="noopener">
-      Download CV (PDF)
-    </a>
 
     <p class="subtle">Under construction...</p>
 
@@ -194,14 +173,10 @@
     <h2>Research</h2>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-  </section>
-
   <!-- Footer -->
   <footer>
     <p>© 2025 Aysenur. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
