@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ayşenur Gürel</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
     /* Global styles */
@@ -24,7 +24,7 @@
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #fff;
-      color: #111; /* black tone for text */
+      color: #111;
     }
 
     /* Navigation */
@@ -60,6 +60,8 @@
       color: #111;
       text-align: center;
       padding: 20px;
+      /* Helps avoid the fixed nav overlapping content on small screens */
+      padding-top: 80px;
     }
 
     /* Name styling */
@@ -82,15 +84,32 @@
       font-size: 1.1rem;
       max-width: 700px;
     }
+
     .subtle {
-      margin-top: 15px;
+      margin-top: 12px;
       color: #777;
       font-size: 0.95rem;
     }
 
+    /* CV Button */
+    .cv-button {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 12px 24px;
+      border: 1px solid #111;
+      color: #111;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .cv-button:hover {
+      background: #111;
+      color: #fff;
+    }
+
     /* Social icons */
     .social-icons {
-      margin-top: 20px;
+      margin-top: 18px;
     }
     .social-icons a {
       margin: 0 15px;
@@ -107,6 +126,8 @@
       padding: 60px 20px;
       max-width: 900px;
       margin: auto;
+      /* Makes anchor scroll land nicely under the fixed nav */
+      scroll-margin-top: 90px;
     }
     section h2 {
       text-align: right;
@@ -125,12 +146,13 @@
     }
   </style>
 </head>
-<body>
 
+<body>
   <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#research">Research</a>
+    <a href="Aysenur_Gurel_CV.pdf" target="_blank" rel="noopener">CV</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -140,14 +162,20 @@
       <h1>Aysenur</h1>
       <p>Gurel</p>
     </div>
+
     <p>Master's in Human-Computer Interaction</p>
     <p>Research Intern at AIT Austrian Institute of Technology</p>
+
+    <!-- CV button -->
+    <a href="Aysenur_Gurel_CV.pdf" class="cv-button" target="_blank" rel="noopener">
+      Download CV (PDF)
+    </a>
 
     <p class="subtle">Under construction...</p>
 
     <!-- Social Links -->
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/aysenurgurel" target="_blank" title="LinkedIn">
+      <a href="https://www.linkedin.com/in/aysenurgurel" target="_blank" rel="noopener" title="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
       <a href="mailto:aysenur.guerel@stud.plus.ac.at" title="Email">
@@ -175,6 +203,5 @@
   <footer>
     <p>© 2025 Aysenur. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
