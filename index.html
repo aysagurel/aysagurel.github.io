@@ -153,6 +153,28 @@
       color: #333;
     }
 
+    /* Project labels */
+    .label {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-right: 10px;
+      vertical-align: middle;
+      letter-spacing: 0.3px;
+    }
+    
+    .label-thesis {
+      background: rgba(255, 171, 64, 0.18); /* soft orange */
+      color: #8a4b00;
+    }
+    
+    .label-greentouch {
+      background: rgba(76, 175, 80, 0.18); /* soft green */
+      color: #2e6b35;
+    }
+
     /* Service */
     .service-list {
       display: flex;
@@ -355,7 +377,8 @@
 
     <div class="pub-item">
       <p class="pub-title">
-        Master’s Thesis: Designing and Evaluating LLM-based AI for Human Interaction: 
+        <span class="label label-thesis">Master’s Thesis</span>
+        Designing and Evaluating LLM-based AI for Human Interaction: 
         A Multi-Agent Conversational AI System to Support Newly Hired Students
       </p>
       <p class="pub-venue">
@@ -365,7 +388,8 @@
 
     <div class="pub-item">
       <p class="pub-title">
-        GreenTouch Project: Branching Foresight – A Novel Interaction Concept for AI-Generated Scenario Exploration
+        <span class="label label-greentouch">GreenTouch Project</span>
+        Branching Foresight – A Novel Interaction Concept for AI-Generated Scenario Exploration
       </p>
       <p class="pub-venue">
         Manuscript under submission, 2025.
